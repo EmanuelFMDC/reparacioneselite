@@ -4,22 +4,23 @@
 
 @layer base {
     *, *::before, *::after {
-      @apply box-border;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+        @apply box-border;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
   
     body {
-      @apply bg-white text-gray-900;
+        @apply bg-white text-gray-900;
     }
 }
 
 @layer components {
-    /* Section header */
+    /* Header */
     .header {
-        @apply bg-white shadow-md h-44 flex items-center justify-between px-4;
+        @apply bg-white shadow-md z-10 h-44 flex items-center justify-between px-4 sticky top-0;
     }
+    
     
     .logo {
         @apply flex items-center;
@@ -32,17 +33,18 @@
     }
     
     .contact-info {
-        @apply flex items-center space-x-4;
+        @apply  items-center space-x-4 hidden md:flex md:gap-32;
     }
 
     .contact-info a {
-        @apply text-gray-900 pr-10 hover:text-gray-700 flex items-center space-x-2 text-2xl;
+        @apply text-gray-900 hover:text-gray-700 flex items-center space-x-2 text-3xl;
     }
 
     .contact-info i {
         @apply h-8 w-8;
     }
-    /* Section refran */
+
+    /* Sección refrán */
     .refran {
         @apply bg-[#0583a5] text-white p-6 text-center;
     }
@@ -55,20 +57,20 @@
         @apply text-lg;
     }
 
+    /* Carousel */
     .carousel {
         @apply relative overflow-hidden bg-white pt-4;
         height: 100px; /* Ajusta según tus necesidades */
     }
     
     .carousel-wrapper {
-        @apply flex
-        md:w-3/6;
+        @apply flex;
+        width: 100%;
         animation: slide 20s linear infinite;
     }
     
     .carousel-item {
         @apply flex-shrink-0 w-auto h-20 flex items-center justify-center;
-        /* Ajusta la altura y el ancho según el tamaño deseado */
         margin-right: 90px; /* Espacio entre las imágenes */
     }
     
@@ -80,17 +82,10 @@
         0% { transform: translateX(0); }
         100% { transform: translateX(-100%); }
     }
-    
-    
-    
-    
-    
 
-    /* Seccion ofrecemos */
+    /* Sección ofrecemos */
     .ofrecemos {
-        @apply bg-white py-12 
-        md:py-0
-        ;
+        @apply bg-white my-10 md:my-0;
     }
 
     .ofrecemos h2 {
@@ -111,8 +106,8 @@
         flex: 1;
     }
 
-    .ofrecemos-image img {
-        @apply w-full max-w-md;
+    .ofrecemos-image {
+        @apply hidden md:flex justify-center mb-8 md:mb-0;
     }
 
     .ofrecemos-item {
@@ -131,5 +126,50 @@
     .ofrecemos-item p {
         @apply text-gray-700;
     }
-    /* Botones contacto */
+
+    /* Botones */
+    .buttons {
+        @apply mt-0 flex flex-col md:flex-row items-center m-10;
+    }
+
+    .buttons a {
+        @apply flex items-center justify-center px-6 py-3 rounded shadow-md text-lg font-semibold gap-4;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .btn-call {
+        @apply bg-red-600 text-white hover:bg-red-700 transition duration-300 md:mr-32;
+    }
+
+    .btn-whatsapp {
+        @apply bg-green-600 text-white hover:bg-green-700 transition duration-300 mt-7 md:mt-0;
+    }
+
+    /* Tarjetas de Servicios */
+    /* Tarjetas de Servicios */
+    .tarjetas-servicios {
+        @apply mt-10 py-8;
+    }
+
+    .tarjeta {
+        @apply bg-white shadow-lg rounded-lg overflow-hidden flex flex-col;
+    }
+
+    .tarjeta-img img {
+        @apply w-full h-52 object-contain; /* Ajusta el tamaño de la imagen y usa object-contain para mantener la imagen completa */
+    }
+
+    .tarjeta-content {
+        @apply p-6 flex flex-col items-center flex-grow;
+    }
+
+    .tarjeta-content h3 {
+        @apply text-2xl font-semibold mb-2;
+    }
+
+    .tarjeta-content p {
+        @apply text-gray-600 text-center;
+    }
+
 }
