@@ -18,7 +18,7 @@
 @layer components {
     /* Header */
     .header {
-        @apply bg-white shadow-md z-10 h-32 md:h-44 flex items-center justify-between px-4 sticky top-0;
+        @apply bg-white shadow-xl z-10 h-32 xl:h-44 flex items-center justify-between px-4 sticky top-0;
     }
     
       /* Logo */
@@ -33,7 +33,7 @@
     }
     
     .contact-info {
-        @apply  items-center space-x-4 hidden md:flex md:gap-32;
+        @apply  items-center space-x-4 hidden xl:flex xl:gap-32;
     }
 
     .contact-info a {
@@ -46,7 +46,7 @@
 
     /* Sección refrán */
     .refran {
-        @apply bg-white md:bg-[#0583a5] text-primary md:text-white p-6 text-center;
+        @apply bg-white xl:bg-[#0583a5] text-primary xl:text-white p-6 text-center;
     }
 
     .refran h2 {
@@ -85,7 +85,7 @@
 
     /* Sección ofrecemos */
     .ofrecemos {
-        @apply bg-white my-10 mx-4 md:mx-0 md:my-0;
+        @apply bg-white my-10 mx-4 xl:mx-0 xl:my-0;
     }
 
     .ofrecemos h2 {
@@ -93,7 +93,7 @@
     }
 
     .ofrecemos-content {
-        @apply flex flex-col md:flex-row items-center justify-between;
+        @apply flex flex-col xl:flex-row items-center justify-between;
     }
 
     .ofrecemos-left, .ofrecemos-right {
@@ -102,12 +102,12 @@
     }
 
     .ofrecemos-image {
-        @apply flex justify-center mb-8 md:mb-0;
+        @apply flex justify-center mb-8 xl:mb-0;
         flex: 1;
     }
 
     .ofrecemos-image {
-        @apply hidden md:flex justify-center mb-8 md:mb-0;
+        @apply hidden xl:flex justify-center mb-8 xl:mb-0;
     }
 
     .ofrecemos-item {
@@ -129,24 +129,23 @@
 
     /* Botones */
     .buttons {
-        @apply mt-0 flex flex-col md:flex-row items-center m-10;
+        @apply mt-0 flex flex-col xl:flex-row items-center m-10;
     }
 
     .buttons a {
-        @apply flex items-center justify-center px-6 py-3 rounded shadow-md text-lg font-semibold gap-4;
+        @apply flex items-center justify-center px-6 py-3 rounded shadow-xl text-lg font-semibold gap-4;
         width: 100%;
         margin-bottom: 1rem;
     }
 
     .btn-call {
-        @apply bg-primary text-white hover:bg-primary transition duration-300 md:mr-32;
+        @apply bg-primary text-white hover:bg-blue-700 transition duration-300 xl:mr-32;
     }
 
     .btn-whatsapp {
-        @apply bg-green-600 text-white hover:bg-green-700 transition duration-300 mt-7 md:mt-0;
+        @apply bg-green-600 text-white hover:bg-green-700 transition duration-300 mt-7 xl:mt-0;
     }
 
-    /* Tarjetas de Servicios */
     /* Tarjetas de Servicios */
     .tarjetas-servicios {
         @apply mt-10 py-8;
@@ -171,5 +170,6 @@
     .tarjeta-content p {
         @apply text-gray-600 text-center;
     }
+    /* Footer */
 
 }
