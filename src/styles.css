@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    *, *::before, *::after {
+      @apply box-border;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  
+    body {
+      @apply bg-white text-gray-900;
+    }
+}
+
+@layer components {
+    /* Section header */
+    .header {
+        @apply bg-white shadow-md h-44 flex items-center justify-between px-4;
+    }
+    
+    .logo {
+        @apply flex items-center;
+        margin-right: auto;
+    }
+    
+    .logo img {
+        @apply h-44;
+        max-height: 100%;
+    }
+    
+    .contact-info {
+        @apply flex items-center space-x-4;
+    }
+
+    .contact-info a {
+        @apply text-gray-900 pr-10 hover:text-gray-700 flex items-center space-x-2 text-2xl;
+    }
+
+    .contact-info i {
+        @apply h-8 w-8;
+    }
+    /* Section refran */
+    .refran {
+        @apply bg-[#0583a5] text-white p-6 text-center;
+    }
+
+    .refran h2 {
+        @apply text-2xl font-bold mb-4;
+    }
+
+    .refran p {
+        @apply text-lg;
+    }
+
+    .carousel {
+        @apply relative overflow-hidden bg-white pt-4;
+        height: 100px; /* Ajusta según tus necesidades */
+    }
+    
+    .carousel-wrapper {
+        @apply flex
+        md:w-3/6;
+        animation: slide 20s linear infinite;
+    }
+    
+    .carousel-item {
+        @apply flex-shrink-0 w-auto h-20 flex items-center justify-center;
+        /* Ajusta la altura y el ancho según el tamaño deseado */
+        margin-right: 90px; /* Espacio entre las imágenes */
+    }
+    
+    .carousel-item img {
+        @apply w-full h-full object-cover;
+    }
+    
+    @keyframes slide {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-100%); }
+    }
+    
+    
+    
+    
+    
+
+    /* Seccion ofrecemos */
+    .ofrecemos {
+        @apply bg-white py-12 
+        md:py-0
+        ;
+    }
+
+    .ofrecemos h2 {
+        @apply text-3xl font-bold mb-8 text-[#0583a5];
+    }
+
+    .ofrecemos-content {
+        @apply flex flex-col md:flex-row items-center justify-between;
+    }
+
+    .ofrecemos-left, .ofrecemos-right {
+        @apply flex flex-col space-y-6;
+        flex: 1;
+    }
+
+    .ofrecemos-image {
+        @apply flex justify-center mb-8 md:mb-0;
+        flex: 1;
+    }
+
+    .ofrecemos-image img {
+        @apply w-full max-w-md;
+    }
+
+    .ofrecemos-item {
+        @apply flex items-start space-x-6;
+    }
+
+    .ofrecemos-item i {
+        @apply text-[#0583a5];
+        font-size: 4rem;
+    }
+
+    .ofrecemos-item h3 {
+        @apply text-xl font-semibold mb-2;
+    }
+
+    .ofrecemos-item p {
+        @apply text-gray-700;
+    }
+    /* Botones contacto */
+}

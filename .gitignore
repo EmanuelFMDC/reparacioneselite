@@ -1,0 +1,33 @@
+# Node modules (si estás usando Node.js)
+node_modules/
+
+# Archivos de configuración de entornos
+.env
+
+# Archivos de construcción o distribución
+/dist
+/build
+
+# Dependencias de paquetes
+/package-lock.json
+/yarn.lock
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración del editor
+.vscode/
+.idea/
+
+# Archivos generados por el compilador (por ejemplo, Sass o Less)
+*.css.map
+*.scssc
+*.sassc
+
+# Archivos de imágenes de la caché
+/src/img/*.bak
+
+# Otros archivos temporales
+*.log
+*.tmp
