@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página de Prueba</title>
+  <title>Reparaciones Elite</title>
   <link href="./src/output.css" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="./src/img/ReparacionesEliteLogo.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
@@ -20,13 +20,35 @@
             <i class="bi bi-telephone"></i>
             <span>33-1449-0067</span>
           </a>
-          <a href="https://wa.me/33-1449-0067" target="_blank">
+          <a href="https://wa.me/33-1449-0067?text=Hola%2C%20quiero%20más%20información" target="_blank">
             <i class="bi bi-whatsapp"></i>
             <span>Contacta por WhatsApp</span>
           </a>
+          
         </div>
       </div>
     </header>
+  <!-- Modal -->
+  <div id="popup-modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+    <div class="bg-white rounded-lg p-8 relative max-w-md mx-auto">
+        <!-- Mensaje de descuento llamativo -->
+        <div class="bg-red-600 text-white text-center py-2 rounded-t-lg font-bold text-lg mb-4">
+            ¡Descuento del 20%! Manda "REPELITEWEB" a nuestro WhatsApp
+        </div>
+        <!-- Botón de cerrar -->
+        <button id="close-modal" class="absolute -top-5 -right-1 text-gray-600 hover:text-gray-900 text-6xl font-bold">
+            &times;
+        </button>
+        <!-- Imagen -->
+        <div class="flex justify-center mb-6">
+            <img src="./src/img/publicidad3.png" alt="Publicidad" class="max-w-full h-96 rounded shadow-lg">
+        </div>
+        <!-- Botón de WhatsApp -->
+        <a href="https://wa.me/33-1449-0067?text=Hola%2C%20quiero%20más%20información%20descuento:$20REPELITEWEB" target="_blank" class="bg-green-600 text-white py-3 px-4 rounded-full block text-center hover:bg-green-700 transition duration-300">
+            Contáctanos por WhatsApp
+        </a>
+    </div>
+  </div>
 
     <main>
       <div>
@@ -36,7 +58,7 @@
         </a>
 
         <!-- Botón flotante de WhatsApp -->
-        <a href="https://wa.me/33-1449-0067" target="_blank" class="fixed right-6 bottom-6 bg-green-600 text-white p-4 rounded-full shadow-lg hover:bg-green-700 transition duration-300 flex items-center gap-3 text-xl">
+        <a href="https://wa.me/33-1449-0067?text=Hola%2C%20quiero%20más%20información" target="_blank" class="fixed right-6 bottom-6 bg-green-600 text-white p-4 rounded-full shadow-lg hover:bg-green-700 transition duration-300 flex items-center gap-3 text-xl">
           <i class="bi bi-whatsapp text-4xl scale-110"></i> <!-- Aquí cambié el tamaño del texto del icono -->
         </a>
       </div>
@@ -73,16 +95,16 @@
                     <img src="./src/img/electrolux.png" alt="electrolux">
                 </div>
                 <div class="carousel-item">
-                  <img src="./src/img/hisense.png" alt="electrolux">
+                  <img src="./src/img/hisense.png" alt="hisense">
               </div>
               <div class="carousel-item">
-                <img src="./src/img/iem.png" alt="electrolux">
+                <img src="./src/img/iem.png" alt="iem">
             </div>
             <div class="carousel-item">
-              <img src="./src/img/teka.png" alt="electrolux">
+              <img src="./src/img/teka.png" alt="teka">
           </div>
           <div class="carousel-item">
-            <img src="./src/img/subz.png">
+            <img src="./src/img/subz.png" alt="subz">
         </div>
             </div>
         </section>
@@ -147,7 +169,7 @@
                     <i class="bi bi-telephone"></i>
                     LLAMA YA
                 </a>
-                <a href="https://wa.me/33-1449-0067" target="_blank" class="btn-whatsapp">
+                <a href="https://wa.me/33-1449-0067?text=Hola%2C%20quiero%20más%20información" target="_blank" class="btn-whatsapp">
                     <i class="bi bi-whatsapp"></i>
                     Contacta por WhatsApp
                 </a>
@@ -293,7 +315,7 @@
     
         <!-- Botón WhatsApp -->
         <div class="footer-whatsapp flex justify-center items-center mt-6">
-          <a href="https://wa.me/33-1449-0067" target="_blank" class="bg-green-600  text-white py-3 text-sm px-2 rounded-full hover:bg-green-700 transition duration-300">
+          <a href="https://wa.me/33-1449-0067?text=Hola%2C%20quiero%20más%20información" target="_blank" class="bg-green-600  text-white py-3 text-sm px-2 rounded-full hover:bg-green-700 transition duration-300">
             Contáctanos por WhatsApp
           </a>
         </div>
@@ -301,7 +323,20 @@
       </div>
     </footer>
     
-    
+    <!-- JavaScript al final del body -->
+    <script>
+      // Espera 5 segundos antes de mostrar el modal
+      setTimeout(() => {
+        const modal = document.getElementById('popup-modal');
+        modal.classList.remove('hidden');
+      }, 5000);
+
+      // Cierra el modal cuando se hace clic en el botón de cerrar
+      document.getElementById('close-modal').addEventListener('click', () => {
+        const modal = document.getElementById('popup-modal');
+        modal.classList.add('hidden');
+      });
+  </script>
 
 </body>
 </html>

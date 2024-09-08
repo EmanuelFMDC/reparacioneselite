@@ -64,8 +64,8 @@
     }
     
     .carousel-wrapper {
-        @apply flex;
-        width: 100%;
+        @apply flex min-w-max xl:min-w-0;
+
         animation: slide 20s linear infinite;
     }
     
