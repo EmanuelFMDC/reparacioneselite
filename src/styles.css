@@ -18,7 +18,7 @@
 @layer components {
     /* Header */
     .header {
-        @apply bg-white shadow-xl z-10 h-32 xl:h-44 flex items-center justify-between px-4 sticky top-0;
+        @apply bg-white shadow-xl z-10 h-32 flex items-center justify-between px-4 sticky top-0;
     }
     
       /* Logo */
@@ -28,7 +28,7 @@
     }
     
     .logo img {
-        @apply  h-44;
+        @apply  h-28;
         max-height: 100%;
     }
     
@@ -37,12 +37,57 @@
     }
 
     .contact-info a {
-        @apply text-gray-900 hover:text-gray-700 flex items-center space-x-2 text-3xl;
+        @apply text-gray-900 hover:text-gray-700 flex items-center space-x-2 text-2xl ;
     }
 
     .contact-info i {
         @apply h-8 w-8;
     }
+    /* Estilos para el botón de menú hamburguesa */
+.hamburger {
+    @apply flex items-center justify-center bg-transparent border-none cursor-pointer;
+  }
+  
+  .bi-list {
+    @apply text-gray-800 text-4xl;
+  }
+  
+  /* Estilos para el menú de navegación */
+  .nav {
+    @apply fixed top-0 right-0 xl:left-40 h-full bg-primary text-white xl:text-black text-xl xl:text-sm underline shadow-lg transform translate-x-full transition-transform xl:translate-x-0 xl:flex xl:relative xl:w-auto xl:h-auto xl:shadow-none xl:bg-transparent xl:transition-none xl:justify-end;
+    width: 67%; /* Ancho del 70% en pantallas pequeñas */
+  }
+  
+  .nav-list {
+    @apply list-none m-0 p-0 flex flex-col items-center justify-center h-full space-y-6 xl:flex-row xl:space-y-0 xl:space-x-6 xl:items-start xl:h-auto xl:ml-52;
+  }
+  
+  .nav-list li a {
+    @apply whitespace-nowrap; /* Evita que el texto se divida en varias líneas */
+  }
+  
+  
+  .close-button {
+    @apply absolute top-4 right-4 text-gray-600 text-4xl cursor-pointer;
+  }
+  
+  .bi-x-lg {
+    @apply text-white;
+  }
+  
+@media (max-width: 1280px) {
+    .header {
+        @apply flex-col items-center;
+    }
+
+    .logo {
+        @apply mb-4; /* Margen inferior para separar el logo del nav en pantallas pequeñas */
+    }
+
+    .contact-info {
+        @apply mb-4; /* Margen inferior para separar el contact-info del nav en pantallas pequeñas */
+    }
+}
 
     /* Sección refrán */
     .refran {
@@ -57,31 +102,43 @@
         @apply text-lg;
     }
 
-    /* Carousel */
-    .carousel {
-        @apply relative overflow-hidden bg-white pt-4;
-        height: 100px; /* Ajusta según tus necesidades */
-    }
-    
-    .carousel-wrapper {
-        @apply flex min-w-max xl:min-w-0;
+/* Carousel */
+.carousel {
+    @apply relative overflow-hidden bg-white pt-4;
+    height: 100px; /* Ajusta según tus necesidades */
+}
 
-        animation: slide 20s linear infinite;
-    }
-    
+.carousel-wrapper {
+    @apply flex min-w-max xl:min-w-0;
+    animation: slide 20s linear infinite;
+}
+
+/* Estilos generales para todos los navegadores */
+.carousel-item {
+    @apply flex-shrink-0;
+    width: 100px; /* Ajusta el ancho según tus necesidades */
+    height: 100%; /* Asegura que el contenedor tenga la altura del carrusel */
+    margin-right: 0px; /* Espacio entre las imágenes */
+    overflow: hidden;
+}
+
+/* Estilos específicos para Safari */
+@supports (-webkit-appearance: none) {
     .carousel-item {
         @apply flex-shrink-0 w-auto h-20 flex items-center justify-center;
         margin-right: 90px; /* Espacio entre las imágenes */
     }
-    
+
     .carousel-item img {
-        @apply w-full h-full object-cover;
+        @apply w-full h-full object-contain; /* Ajusta el contenido de las imágenes en Safari */
     }
-    
-    @keyframes slide {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-100%); }
-    }
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
 
     /* Sección ofrecemos */
     .ofrecemos {
